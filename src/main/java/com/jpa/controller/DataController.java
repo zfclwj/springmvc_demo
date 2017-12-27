@@ -20,15 +20,14 @@ import com.jpa.repositories.UsersRepository;
 import com.jpa.service.UserRepositoryService;
 
 
-//@RequestMapping(value = "/views")
 @Controller
+@RequestMapping(value = "/views")
 public class DataController {
 
 	@Autowired
 	private UserRepositoryService userRepositoryService;
 	
-	//@RequestMapping(value = "test.do", method = {RequestMethod.GET, RequestMethod.POST}, produces = "text/html;charset=UTF-8")
-	@RequestMapping("test.do")
+	@RequestMapping(value = "/test", method = {RequestMethod.GET, RequestMethod.POST}, produces = "text/html;charset=UTF-8")
 	public ModelAndView findbyNameAndAddress(String name, String password){
 		
 		Users user = userRepositoryService.findByUserNameAndPassword(name, password);
